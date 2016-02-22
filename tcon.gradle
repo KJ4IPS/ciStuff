@@ -1,2 +1,14 @@
 //TCON:  TODO: Force local mantle install
 
+println "HAUN.GURU Jenkins Override Script"
+
+println "Overriding Mantle with local version."
+configurations.all{
+  resolutionStrategy{
+    failOnVersionConflict
+    dependencySubstitution {
+      substitute Module("slimeknights.mantle:Mantle") with fileTree(dir: '../Mantle/build/libs/', include: '*deobf*.jar')
+      //Maybe later fix to use local maven
+    }
+  }
+}

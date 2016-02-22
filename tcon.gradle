@@ -7,7 +7,7 @@ allprojects {
   configurations.all{
     resolutionStrategy{
       dependencySubstitution {
-        substitute Module("slimeknights.mantle:Mantle") with fileTree(dir: '../Mantle/build/libs/', include: '*deobf*.jar')
+        substitute module("slimeknights.mantle:Mantle") with fileTree(dir: '../Mantle/build/libs/', include: '*deobf*.jar')
         //Maybe later fix to use local maven
       }
     }

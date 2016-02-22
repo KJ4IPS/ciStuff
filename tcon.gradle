@@ -6,7 +6,6 @@ println "Overriding Mantle with local version."
 allprojects {
   configurations.all{
     resolutionStrategy{
-      failOnVersionConflict
       dependencySubstitution {
         substitute Module("slimeknights.mantle:Mantle") with fileTree(dir: '../Mantle/build/libs/', include: '*deobf*.jar')
         //Maybe later fix to use local maven
